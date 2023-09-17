@@ -1,0 +1,113 @@
+[
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Annotated",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "dataclasses",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Student",
+        "kind": 6,
+        "importPath": "myapi",
+        "description": "myapi",
+        "peekOfCode": "class Student(BaseModel):\nname:str\n# get request\n@app.get(\"/\")\ndef index():\n    return {\"name\": \"User Name\"}\n@app.get(\"/get-student/{student_id}\")\ndef get_student(student_id: Annotated[int | None, Path(title=\"The ID of the student you want to View\", ge=0)]):\n    return students[student_id]\n@app.get(\"/get-student-by-name/{student_id}\")",
+        "detail": "myapi",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "myapi",
+        "description": "myapi",
+        "peekOfCode": "def index():\n    return {\"name\": \"User Name\"}\n@app.get(\"/get-student/{student_id}\")\ndef get_student(student_id: Annotated[int | None, Path(title=\"The ID of the student you want to View\", ge=0)]):\n    return students[student_id]\n@app.get(\"/get-student-by-name/{student_id}\")\n# def get_student(name: [Annotated[str| None, Path(title=\"student name\")] = None):\ndef get_student(*, student_id: int, name: Union[str, None, Path(title=\"student name\")] = None):\n    for student_id in students:\n        if students[student_id][name] == name:",
+        "detail": "myapi",
+        "documentation": {}
+    },
+    {
+        "label": "get_student",
+        "kind": 2,
+        "importPath": "myapi",
+        "description": "myapi",
+        "peekOfCode": "def get_student(student_id: Annotated[int | None, Path(title=\"The ID of the student you want to View\", ge=0)]):\n    return students[student_id]\n@app.get(\"/get-student-by-name/{student_id}\")\n# def get_student(name: [Annotated[str| None, Path(title=\"student name\")] = None):\ndef get_student(*, student_id: int, name: Union[str, None, Path(title=\"student name\")] = None):\n    for student_id in students:\n        if students[student_id][name] == name:\n            return students[student_id]\n    return {\"Data\": \"Not found\"}",
+        "detail": "myapi",
+        "documentation": {}
+    },
+    {
+        "label": "get_student",
+        "kind": 2,
+        "importPath": "myapi",
+        "description": "myapi",
+        "peekOfCode": "def get_student(*, student_id: int, name: Union[str, None, Path(title=\"student name\")] = None):\n    for student_id in students:\n        if students[student_id][name] == name:\n            return students[student_id]\n    return {\"Data\": \"Not found\"}",
+        "detail": "myapi",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "myapi",
+        "description": "myapi",
+        "peekOfCode": "app = FastAPI()\napp = FastAPI()\nstudents = {\n    1: {\n        \"name\": \"john\",\n        \"age\": 17,\n        \"class\": \"year 12\"\n    }\n}\n# creating class",
+        "detail": "myapi",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "myapi",
+        "description": "myapi",
+        "peekOfCode": "app = FastAPI()\nstudents = {\n    1: {\n        \"name\": \"john\",\n        \"age\": 17,\n        \"class\": \"year 12\"\n    }\n}\n# creating class\n@dataclasses",
+        "detail": "myapi",
+        "documentation": {}
+    },
+    {
+        "label": "students",
+        "kind": 5,
+        "importPath": "myapi",
+        "description": "myapi",
+        "peekOfCode": "students = {\n    1: {\n        \"name\": \"john\",\n        \"age\": 17,\n        \"class\": \"year 12\"\n    }\n}\n# creating class\n@dataclasses\nclass Student(BaseModel):",
+        "detail": "myapi",
+        "documentation": {}
+    }
+]
